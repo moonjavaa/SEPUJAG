@@ -14,4 +14,9 @@ public class Processus {
 	public String toString(){
 		return(nomProcessus+" "+tempArrive+" "+duree);
 	}
+	
+	public int ComparaTo(Processus p){
+		return(this.nomProcessus.compareTo(p.nomProcessus));
+	}
+	
 }
