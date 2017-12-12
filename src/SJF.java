@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -16,6 +17,8 @@ public class SJF {
 			System.out.println(Ensemble.get(i));
 		
 		for(int i=1; i<Ensemble.size();i++){
+			Time tmp=new Time(Ensemble.get(i-1).tempArrive.getHours(),Ensemble.get(i-1).tempArrive.getMinutes()+Ensemble.get(i-1).duree.getMinutes(),0);
+			if(Ensemble.get(i).tempArrive.before(tmp))
 			Ensemble.get(i).tempArrive.setMinutes(Ensemble.get(i-1).tempArrive.getMinutes()+Ensemble.get(i-1).duree.getMinutes());
 		}
 		System.out.println("-----------------\n Sjf");
