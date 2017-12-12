@@ -1,32 +1,32 @@
 import java.util.Comparator;
 
+//
+//public class Comparateur implements Comparator<Processus> {
+//	public int compare(Processus left, Processus right) {
+//        return left.duree.seconde-(right.duree.seconde);
+//    }
+//}
 
-public class Comparateur implements Comparator<Processus> {
+class ComparateurHeure implements Comparator<Processus> {
 	public int compare(Processus left, Processus right) {
-        return left.duree.seconde-(right.duree.seconde);
+        return left.tempArrive.compareTo(right.tempArrive);
     }
 }
 
-class ComparateurDateHeure implements Comparator<Processus> {
+class ComparateurDureeEtTemps implements Comparator<Processus> {
 	public int compare(Processus left, Processus right) {
-        return left.tempArrive.heure-(right.tempArrive.heure);
+        return (left.duree.compareTo(right.duree))+(left.tempArrive.compareTo(right.tempArrive));
     }
 }
 
-class ComparateurDateMinute implements Comparator<Processus> {
-	public int compare(Processus left, Processus right) {
-        return left.tempArrive.minute-(right.tempArrive.minute);
-    }
-}
-
-class ComparateurDureeMinute implements Comparator<Processus> {
-	public int compare(Processus left, Processus right) {
-        return left.tempArrive.minute-(right.tempArrive.minute);
-    }
-}
-
-class ComparateurDureeSeconde implements Comparator<Processus> {
-	public int compare(Processus left, Processus right) {
-        return left.tempArrive.minute-(right.tempArrive.minute);
-    }
-}
+//class ComparateurDureeMinute implements Comparator<Processus> {
+//	public int compare(Processus left, Processus right) {
+//        return left.tempArrive.minute-(right.tempArrive.minute);
+//    }
+//}
+//
+//class ComparateurDureeSeconde implements Comparator<Processus> {
+//	public int compare(Processus left, Processus right) {
+//        return left.tempArrive.minute-(right.tempArrive.minute);
+//    }
+//}

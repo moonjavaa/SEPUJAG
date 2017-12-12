@@ -1,11 +1,15 @@
+import java.sql.Time;
+import java.time.Duration;
+import java.time.temporal.TemporalAmount;
+
 
 
 public class Processus {
 	String nomProcessus;
-	Heure tempArrive;
-	Duree duree;
+	Time tempArrive;
+	Time duree;
 	
-	Processus(String nom, Heure t, Duree d){
+	Processus(String nom, Time t, Time d){
 		nomProcessus=nom;
 		tempArrive=t;
 		duree=d;
@@ -18,5 +22,7 @@ public class Processus {
 	public int ComparaTo(Processus p){
 		return(this.nomProcessus.compareTo(p.nomProcessus));
 	}
+	
+	
 	
 }
